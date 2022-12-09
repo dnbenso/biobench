@@ -12,4 +12,6 @@
 
 # ASSUME "source pipelinefunc.sh;get_ena;download" has been run already and src dir exists
 source pipelinefunc.sh
+export OMP_NUM_THREADS=${SLURM_NTASKS}
+export THREADS=${SLURM_NTASKS}
 qc
