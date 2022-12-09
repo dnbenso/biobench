@@ -96,9 +96,3 @@ callvariants () {
         | bcftools call --threads $THREADS -vmO z -o vcf.gz
     cd ..
 }
-
-#INFILES_R1=( $(ls ../src/ERR*_1.fastq.gz) )
-#INFILES_R2=( $(ls ../src/ERR*_2.fastq.gz) )
-#time qc
-#time align
-##time callvariants
