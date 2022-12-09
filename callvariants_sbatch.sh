@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH --job-name=BMK-ALIGN
+#SBATCH --job-name=BMK-VARIANTS
 #SBATCH --time=00:60:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
