@@ -14,5 +14,7 @@
 # ASSUME qc has been run already
 source pipelinefunc.sh
 export OMP_NUM_THREADS=${SLURM_NTASKS}
+# We call bwa twice at once and so create twice $THREADS threads
+# Could reduce this by a factor of 2: THREADS=$((THREADS / 2))
 export THREADS=${SLURM_NTASKS}
 align
