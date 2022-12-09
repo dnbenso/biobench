@@ -34,7 +34,13 @@ The pipelinefunc.sh shell script contains a number of functions:
 You can use it as is by calling the sbatch scripts on a SLURM HPC system or on
 the command line.
 
-For example to run through the whole pipeline on the command line:
+You will need to make sure you change the ADAPTERS_PATH variable for trimmomatic
+prior to running the qc function.
+
+If running the sbatch scripts, ensure you resource them appropriately for your
+system and create the logs directory first in your working directory.
+
+To run through the whole pipeline on the command line:
 
 ```
 source pipelinefunc.sh

@@ -4,10 +4,12 @@
 #set -e
 #
 # GLOBAL VARS
-THREADS=4
+export THREADS=4
 # Can extend accession list if you want jobs to run for longer
-ACCESSIONLIST="SAMEA104724033,SAMEA1044899"
-REFERENCE=CAKOAA01
+export ACCESSIONLIST="SAMEA104724033,SAMEA1044899"
+export REFERENCE=CAKOAA01
+# Adapaters PATH - you will need to change this
+export ADAPTERS_PATH=/apps/trimmomatic/0.39/adapters
 
 #
 # Maybe get ena-file-downloader
@@ -46,7 +48,7 @@ qc () {
         trimmomatic PE ${INFILES_R1[$i]} ${INFILES_R2[$i]} \
             $(basename ${INFILES_R1[$i]} .fastq.gz).trim.fastq.gz $(basename ${INFILES_R1[$i]} .fastq.gz)un.trim.fastq.gz \
             $(basename ${INFILES_R2[$i]} .fastq.gz).trim.fastq.gz $(basename ${INFILES_R2[$i]} .fastq.gz)un.trim.fastq.gz \
-            SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:/apps/trimmomatic/0.39/adapters/NexteraPE-PE.fa:2:40:15
+            SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:$ADAPTERS_PATH/TruSeq3-PE-2.fa:2:40:15
         )&
         PID="${!} ${PID}"
     done
@@ -87,7 +89,7 @@ align () {
 
 # Call Variants
 callvariants () {
-    mkdir -p vars && cd vars
+    mkdir -p variants && cd variants
     module load bcftools
     export INFILES_R1=( $(ls ../src/ERR*_1.fastq.gz) )
     export INFILES_R2=( $(ls ../src/ERR*_2.fastq.gz) )
