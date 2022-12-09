@@ -37,11 +37,11 @@ the command line.
 You will need to make sure you change the ADAPTERS_PATH variable for trimmomatic
 prior to running the qc function.
 
-If running the sbatch scripts, ensure you resource them appropriately for your
-system and create the logs directory first in your working directory. The
-functions assume that you are using the modules system - if you aren't just
-remove the module load calls from the pipelinefunc.sh script and ensure the
-binaries are your path.
+If running the sbatch scripts:
+* ensure you resource them appropriately for your system
+* the functions assume that you are using the modules system - if you aren't
+  just remove the module load calls from the pipelinefunc.sh script and ensure
+  the binaries are your path.
 
 To run through the whole pipeline on the command line:
 
