@@ -16,7 +16,7 @@ The pipeline functions require:
 * bcftools - 1.15
 
 Additionally you will need to be able to download about 8GB of data from the
-internet, and you will need about 20GB file system space.
+internet, and you will need about 20GB of file system space.
 
 ## What does it do?
 
