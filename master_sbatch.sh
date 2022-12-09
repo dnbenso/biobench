@@ -1,7 +1,8 @@
 #!/bin/bash
 #
-# Get the input datasets
+# Get the functions
 source pipelinefunc.sh
+# Get the input datasets
 if [ ! -f "src/CAKOAA01.fasta.gz" -o \
     ! -f "src/ERR2486112_1.fastq.gz" -o \
     ! -f "src/ERR2486112_2.fastq.gz" -o \
