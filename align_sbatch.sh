@@ -4,7 +4,7 @@
 #SBATCH --time=00:60:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
-#SBATCH --mem=32GB
+#SBATCH --mem=48GB
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 #SBATCH --account=SC-000098

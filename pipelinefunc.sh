@@ -32,7 +32,7 @@ download () {
     cd ..
 }
 
-# Generate FastQC Report - allow 30 minutes
+# Generate FastQC Report - allow 19 minutes with 4 cores
 qc () {
     module load fastqc
     mkdir -p qc && cd qc
@@ -58,7 +58,7 @@ qc () {
     cd ..
 }
 
-# Align to reference
+# Align to reference - llow aobut 30 minutes with 16 cores 48G ram
 align () {
     module load bwa
     mkdir -p align && cd align
@@ -73,7 +73,6 @@ align () {
     export INFILES_R1=( $(ls ../src/ERR*_1.fastq.gz) )
     export INFILES_R2=( $(ls ../src/ERR*_2.fastq.gz) )
     # Run bwa with threads, but samtools as well at the same time - samtools uses little cpu 
-    # Allow aobut 15 minutes
     #
     # # Note: for convenience we call the bam file PREFIX_1.bam (R1 version of prefix) - but should be called PREFIX.bam
     for i in 0 1;do
