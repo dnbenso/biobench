@@ -3,8 +3,8 @@
 #SBATCH --job-name=BMK-ALIGN
 #SBATCH --time=00:60:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
-#SBATCH --mem=16GB
+#SBATCH --ntasks-per-node=16
+#SBATCH --mem=32GB
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 #SBATCH --account=SC-000098
@@ -13,4 +13,6 @@
 # ASSUME source "pipelinefunc.sh;get_ena;download" has been run already and src dir exists
 # ASSUME qc has been run already
 source pipelinefunc.sh
+export OMP_NUM_THREADS=${SLURM_NTASKS}
+export THREADS=${SLURM_NTASKS}
 align
