@@ -42,6 +42,8 @@ If running the sbatch scripts:
 * the functions assume that you are using the modules system - if you aren't
   just remove the module load calls from the pipelinefunc.sh script and ensure
   the binaries are your path.
+* If you want to just run one script with dependencies on a SLURM HPC system
+  then you can just execute ./master_sbatch.sh to run the entire workflow.
 
 To run through the whole pipeline on the command line:
 
